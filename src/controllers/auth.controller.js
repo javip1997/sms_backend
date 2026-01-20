@@ -19,7 +19,7 @@ exports.signup = async (req, res) => {
   });
 
   res.status(201).json({
-    token: generateToken(user._id),
+    token: generateToken(user),
     user,
   });
 };
@@ -36,7 +36,7 @@ exports.login = async (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
 
   res.json({
-    token: generateToken(user._id),
+    token: generateToken(user),
     user,
   });
 };
